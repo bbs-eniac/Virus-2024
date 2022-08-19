@@ -1,0 +1,424 @@
+html {
+  box-sizing: border-box;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border: none;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+@-webkit-keyframes loading {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes loading {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+body {
+  color: inherit;
+
+  background-color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  opacity: 1;
+  visibility: visible;
+  -webkit-animation: loading 1s 1s both;
+          animation: loading 1s 1s both;
+}
+
+/* Hide scrollbar looks clean */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* a11Y */
+.visuallyhidden {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:focus,
+.visuallyhidden.focusable:active {
+  clip: auto;
+  height: 100%;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  width: 100%;
+  color: inherit;
+  background: inherit;
+  overflow: visible;
+  position: fcxed;
+  left: 0;
+  right: 0;
+  top: 0;
+  outline: none;
+}
+
+.social {
+  position: fixed;
+  color: pink;
+  z-index: 100;
+  line-height: 1;
+  font-size: 12px;
+  left: 2rem;
+  bottom: 1rem;
+}
+
+button,
+input {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* AUTHOR : Giovanni Antonio */
+:root {
+  --gridSize: 4;
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+  --ioExpo: cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+body {
+  background: #111;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.viewport {
+  --zoom: 0.375;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  transform: scale(var(--zoom));
+  transform-origin: center;
+  will-change: transform;
+  transition: transform 1s var(--ioExpo) 0.1s;
+}
+
+.canvas {
+  --x: 0;
+  --y: 0;
+  --gap: 2rem;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(var(--gridSize), 100vw);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: var(--gap);
+  margin: auto;
+  transform: translate3d(calc((-100vw * var(--x, 0)) - (var(--gap) * var(--x, 0))), calc((-100vh * var(--y, 0)) - (var(--gap) * var(--y, 0))), 0);
+  transform-origin: left top;
+  transition: transform 800ms var(--ioExpo);
+  will-change: transform;
+}
+
+.canvas div {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 2rem;
+  opacity: 0.1;
+  overflow: hidden;
+  background-color: #fff;
+  transition: opacity 600ms var(--ease-in-out);
+}
+
+.canvas img {
+  transform: scale(2);
+  transition: transform 1s var(--ioExpo) 0.1s;
+  will-change: transform;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.canvas .selected {
+  opacity: 1;
+  transition: opacity 600ms var(--ease-in-out);
+  pointer-events: none;
+}
+
+.focus-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.focus-container .focus {
+  pointer-events: all;
+}
+
+.focus {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.375);
+  margin: auto;
+  border-radius: 2rem;
+  border: 2px solid whitesmoke;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.logo-container {
+  opacity: 1;
+  transition: opacity 600ms var(--ease-in);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 2rem;
+  width: 10rem;
+  height: 10rem;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(34, 34, 34, 0.1);
+  padding: 0.5rem;
+  z-index: 20;
+}
+.map-container {
+  opacity: 1;
+  transition: opacity 600ms var(--ease-in);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 2rem;
+  width: 5rem;
+  height: 5rem;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(34, 34, 34, 0.1);
+  padding: 0.5rem;
+  z-index: 20;
+}
+
+.map {
+  display: grid;
+  grid-template: repeat(var(--gridSize), 1fr)/repeat(var(--gridSize), 1fr);
+  height: 100%;
+  width: 100%;
+  gap: 4px;
+}
+
+.map div {
+  background-color: whitesmoke;
+  border-radius: 0.1em;
+  opacity: 0.1;
+  transition: opacity 0.3s var(--ease-in-out);
+}
+
+.map .selected {
+  pointer-events: none;
+}
+
+.map .selected,
+.map div:hover {
+  opacity: 1;
+}
+
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+  padding: 0.5rem 1.5rem;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(14, 13, 13, 0.4);
+  border-radius: 2rem;
+  color: whitesmoke;
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Zoom */
+.zoom-container {
+  display: flex;
+  position: fixed;
+  right: 0;
+  bottom: 50%;
+  height: 120px;
+  color: whitesmoke;
+  opacity: 1;
+}
+
+.zoom {
+  display: flex;
+  margin-right: 2rem;
+}
+
+.zoom__input {
+  width: 50px;
+}
+
+.zoom input[type=range] {
+  -webkit-appearance: none;
+  -ms-writing-mode: bt-lr;
+      writing-mode: bt-lr;
+  /* IE */
+  text-align: center;
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  top: 35px;
+  bottom: 0;
+  left: -40px;
+  z-index: 1;
+  transform: rotate(-90deg);
+}
+
+.zoom input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.lines {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  width: 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.lines div {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.datalist {
+  width: 20px;
+  height: 90px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  font-size: 10px;
+  position: absolute;
+  right: 5px;
+}
+
+/* on trigger zoom actions */
+.open .viewport {
+  transform: scale(1);
+  transition: transform 1s var(--ioExpo) 0.1s;
+}
+
+.open .canvas .selected img {
+  transform: scale(1);
+  transition: transform 1s var(--ioExpo) 0.1s;
+}
+
+.open .map-container {
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
+}
+
+.open .focus-container,
+.open .zoom-container {
+  opacity: 0;
+}
+
+.open .map-container {
+  pointer-events: none;
+}
+
+.open .back {
+  opacity: 1;
+  transition: opacity 600ms var(--ease-in);
+  pointer-events: all;
+}
+
+@media (max-width: 1200px) {
+  .zoom,
+.map-container {
+    display: none;
+  }
+}
+body {
+  background-color: #2e3141;
+  background-image: url("https://media.discordapp.net/attachments/763767615042224149/876106208442978394/3eb7b267-4788-47e7-a021-080c4d9f8d3f_3.png?width=554&height=369");
+  /* background-color: black; */
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  background-attachment: fixed, fixed;
+  background-position: center, center;
+}
