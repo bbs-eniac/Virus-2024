@@ -309,7 +309,7 @@ html {
 }
 body {
   /* background-color: #2e3141; */
-  background-image: url("https://media.discordapp.net/attachments/763767615042224149/875370432222613584/3eb7b267-4788-47e7-a021-080c4d9f8d3f.png?width=609&height=406") !important;
+  background-image: url("https://i.postimg.cc/fyGpnPw6/Untitled.png?width=609&height=406") !important;
   /* background-color: black; */
   background-repeat: no-repeat;
   background-size: cover;
@@ -3075,7 +3075,7 @@ body.is-menu-visible #menu .inner {
 @media screen and (max-width: 1280px) {
   #banner {
     padding: 7em 0 8.25em 0;
-    /* background-image: url("https://media.discordapp.net/attachments/763767615042224149/875370432222613584/3eb7b267-4788-47e7-a021-080c4d9f8d3f.png?width=609&height=406") !important; */
+    /* background-image: url("https://i.postimg.cc/fyGpnPw6/Untitled.png?width=609&height=406") !important; */
     background-size: auto, cover;
     background-position: center, center;
     background-repeat: no-repeat;
