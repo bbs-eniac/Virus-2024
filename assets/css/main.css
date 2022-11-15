@@ -3075,7 +3075,7 @@ body.is-menu-visible #menu .inner {
 @media screen and (max-width: 1280px) {
   #banner {
     padding: 7em 0 8.25em 0;
-    /* background-image: url("https://i.postimg.cc/fyGpnPw6/Untitled.png?width=609&height=406") !important; */
+    /* background-image: url("https://media.discordapp.net/attachments/763767615042224149/875370432222613584/3eb7b267-4788-47e7-a021-080c4d9f8d3f.png?width=609&height=406") !important; */
     background-size: auto, cover;
     background-position: center, center;
     background-repeat: no-repeat;
@@ -3269,7 +3269,7 @@ body.is-preload #banner p {
 			justify-content: center; */
 }
 .wrapper.style2 {
-  background-color: #111e2f;
+  background-color: #170B24;
 }
 .wrapper.style2:before,
 .wrapper.style2:after {
@@ -3976,13 +3976,22 @@ i {
     -webkit-transform calc(var(--d) * 2) var(--e);
 }
 .d_card:nth-child(1):before {
-  background-image: url(https://media.discordapp.net/attachments/763767615042224149/876111490590048276/unknown.png);
+  background-image: url(https://cdn.discordapp.com/attachments/909763979704930326/1010176691756347483/florian-olivo-4hbJ-eymZ1o-unsplash.jpg);
 }
 .d_card:nth-child(2):before {
   background-image: url(https://media.discordapp.net/attachments/763767615042224149/876111827065536542/unknown.png);
 }
 .d_card:nth-child(3):before {
   background-image: url(https://media.discordapp.net/attachments/763767615042224149/876112458094366730/unknown.png);
+}
+.d_card:nth-child(4):before {
+  background-image: url(https://cdn.discordapp.com/attachments/909763979704930326/1010163405799309392/413114.jpg);
+}
+.d_card:nth-child(5):before {
+  background-image: url(https://media.discordapp.net/attachments/763767615042224149/876111490590048276/unknown.png);
+}
+.d_card:nth-child(6):before {
+  background-image: url(https://cdn.discordapp.com/attachments/909763979704930326/1010165337112711168/fletcher-pride-liMvhbUq4Xg-unsplash.jpg);
 }
 .content {
   position: relative;
@@ -4095,6 +4104,58 @@ a {
   backdrop-filter: blur(10px);
   border-radius: 10px;
   box-shadow: 0px 0px 100px #000;
+}
+.popupVideo iframe {
+  width: 85%;
+  height: 80%;
+  /* border-radius: 50px; */
+}
+.popupVideo i {
+  z-index: 12;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2vw;
+  height: 2vw;
+  width: 2vw;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1vw;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1000px) {
+  .popupVideo {
+    width: 80vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    margin-left: 10vw;
+    margin-top: 30vh;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px #000;
+  }
+  .popupVideo i {
+    z-index: 12;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 5vw;
+    height: 7vw;
+    width: 7vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1vw;
+  }
 }
 .gws-on-hover {
   display: inline-block;
@@ -4369,4 +4430,6 @@ body {
     display: flex;
   }
 }
+
+
 
