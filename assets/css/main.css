@@ -3990,9 +3990,7 @@ i {
 .d_card:nth-child(5):before {
   background-image: url(https://media.discordapp.net/attachments/763767615042224149/876111490590048276/unknown.png);
 }
-.d_card:nth-child(6):before {
-  background-image: url(https://cdn.discordapp.com/attachments/909763979704930326/1010165337112711168/fletcher-pride-liMvhbUq4Xg-unsplash.jpg);
-}
+
 .content {
   position: relative;
   display: -webkit-box;
