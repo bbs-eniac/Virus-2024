@@ -1,64 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIRUS 2024 Results</title>
-    <link rel="stylesheet" href="RESULTS.css">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d0d0d;
+            color: #e5e5e5;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #181818;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+            text-align: center;
+        }
+
+        /* Main Title */
+        .title {
+            font-size: 3em;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            color: #00c8ff;
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.7), 0 0 20px rgba(0, 200, 255, 0.5);
+            letter-spacing: 3px;
+            animation: glowText 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowText {
+            0% {
+                text-shadow: 0 0 10px rgba(0, 200, 255, 0.7), 0 0 20px rgba(0, 200, 255, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 30px rgba(0, 200, 255, 0.9), 0 0 60px rgba(0, 200, 255, 0.5);
+            }
+        }
+
+        /* Event Section */
+        .event {
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: #232323;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event:hover {
+            background-color: #1e1e1e;
+            box-shadow: 0 0 40px rgba(0, 200, 255, 0.3), 0 0 60px rgba(0, 200, 255, 0.2);
+        }
+
+        .event::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, transparent, rgba(0, 200, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            transition: all 0.4s ease;
+        }
+
+        .event:hover::before {
+            left: 100%;
+            top: 100%;
+        }
+
+        /* Event Title */
+        .event h2 {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #00ffe0;
+            text-shadow: 0 0 8px rgba(0, 255, 224, 0.6);
+        }
+
+        .event p {
+            font-size: 1.2em;
+            color: #b0b0b0;
+        }
+
+        .event p strong {
+            color: #00ffe0;
+            text-shadow: 0 0 8px rgba(0, 255, 224, 0.6);
+        }
+
+        /* Footer Glow Line */
+        .container::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(0, 255, 255, 0.5), rgba(0, 255, 255, 0.1));
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            animation: moveLine 6s linear infinite;
+        }
+
+        @keyframes moveLine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Minimal Hover Animation */
+        .event:hover h2,
+        .event:hover p {
+            color: #00ffe0;
+            text-shadow: 0 0 15px rgba(0, 255, 224, 0.9);
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <h1 class="title">VIRUS 2024 Results</h1>
-        
+
         <section class="event">
             <h2>Fusion AI - AI Innovation Challenge</h2>
-            <p><strong>Winner:</strong></p>
-            <p><strong>Runner-Up:</strong> </p>
-            <p><strong>Highlights:</strong></p>
+            <p><strong>Winner:</strong> Alpha Coders</p>
+            <p><strong>Runner-Up:</strong> The Neural Networkers</p>
+            <p><strong>Highlights:</strong> Breakthrough in NLP</p>
         </section>
 
         <section class="event">
             <h2>Building Empires - Entrepreneurial Hackathon</h2>
-            <p><strong>Winner:</strong></p>
-            <p><strong>Runner-Up:</strong></p>
-            <p><strong>Best Startup Concept:</strong></p>
+            <p><strong>Winner:</strong> Startup Masters</p>
+            <p><strong>Runner-Up:</strong> BizWiz</p>
+            <p><strong>Best Startup Concept:</strong> Greenovation</p>
         </section>
 
         <section class="event">
-            <h2>EduCraft - MineCraft Based Event</h2>
-            <p><strong>Winner:</strong> </p>
-            <p><strong>Runner-Up:</strong> </p>
-            <p><strong>MineCraft Experts:</strong> </p>
+            <h2>EduCraft - Minecraft Based Event</h2>
+            <p><strong>Winner:</strong> Block Builders</p>
+            <p><strong>Runner-Up:</strong> The Crafters</p>
+            <p><strong>Minecraft Experts:</strong> Redstone Revolutionaries</p>
         </section>
 
         <section class="event">
             <h2>Code-Con - Coding Marathon</h2>
-            <p><strong>Winner:</strong> </p>
-            <p><strong>Runner-Up:</strong> </p>
-            <p><strong>Fastest Programmers:</strong> </p>
+            <p><strong>Winner:</strong> Bug Bashers</p>
+            <p><strong>Runner-Up:</strong> Syntax Errors</p>
+            <p><strong>Fastest Programmers:</strong> The Debuggers</p>
         </section>
 
         <section class="event">
             <h2>Gameatrix - Gaming Battle</h2>
-            <p><strong>Winner:</strong> </p>
-            <p><strong>Runner-Up:</strong></p>
-            <p><strong>Best Goal:</strong> </p>
+            <p><strong>Winner:</strong> Victory Royale</p>
+            <p><strong>Runner-Up:</strong> Headshot Kings</p>
+            <p><strong>Best Goal:</strong> The Snipers</p>
         </section>
 
         <section class="event">
             <h2>Artbyte Arena - Digital Art Competition</h2>
-            <p><strong>Winner:</strong> </p>
-            <p><strong>Runner-Up:</strong> </p>
-            <p><strong>Best Creative Concept:</strong> </p>
+            <p><strong>Winner:</strong> Pixel Pros</p>
+            <p><strong>Runner-Up:</strong> Artistic Impressions</p>
+            <p><strong>Best Creative Concept:</strong> ColorWave</p>
         </section>
 
         <section class="event">
             <h2>Pixelomatic - Graphic Design Showdown</h2>
-            <p><strong>Winner:</strong> </p>
-            <p><strong>Runner-Up:</strong> </p>
-            <p><strong>Best Design:</strong> </p>
+            <p><strong>Winner:</strong> Design Gurus</p>
+            <p><strong>Runner-Up:</strong> Creative Pixels</p>
+            <p><strong>Best Design:</strong> The Visionaries</p>
         </section>
     </div>
 </body>
-</html>
 
+</html>
