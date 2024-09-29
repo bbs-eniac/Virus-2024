@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIRUS 2024 Results</title>
+    <title>Tech Event Results</title>
     <style>
-        /* Reset */
+        /* General Styles */
         * {
             margin: 0;
             padding: 0;
@@ -14,182 +13,266 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d0d0d;
-            color: #e5e5e5;
-            line-height: 1.6;
+            background: linear-gradient(45deg, #1b1b1b, #2d2d2d, #1b1b1b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-y: auto;
         }
 
-        /* Container */
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .container {
+            width: 90%;
             max-width: 1200px;
-            margin: 50px auto;
-            padding: 40px;
-            background-color: #181818;
-            border-radius: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+            padding: 20px;
             text-align: center;
-        }
-
-        /* Main Title */
-        .title {
-            font-size: 3em;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 60px;
-            color: #00c8ff;
-            text-shadow: 0 0 10px rgba(0, 200, 255, 0.7), 0 0 20px rgba(0, 200, 255, 0.5);
-            letter-spacing: 3px;
-            animation: glowText 4s ease-in-out infinite alternate;
-        }
-
-        @keyframes glowText {
-            0% {
-                text-shadow: 0 0 10px rgba(0, 200, 255, 0.7), 0 0 20px rgba(0, 200, 255, 0.5);
-            }
-            100% {
-                text-shadow: 0 0 30px rgba(0, 200, 255, 0.9), 0 0 60px rgba(0, 200, 255, 0.5);
-            }
-        }
-
-        /* Event Section */
-        .event {
             margin-bottom: 50px;
-            padding: 30px;
-            background-color: #232323;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .event:hover {
-            background-color: #1e1e1e;
-            box-shadow: 0 0 40px rgba(0, 200, 255, 0.3), 0 0 60px rgba(0, 200, 255, 0.2);
-        }
-
-        .event::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(60deg, transparent, rgba(0, 200, 255, 0.2), transparent);
-            transform: rotate(45deg);
-            transition: all 0.4s ease;
-        }
-
-        .event:hover::before {
-            left: 100%;
-            top: 100%;
-        }
-
-        /* Event Title */
-        .event h2 {
-            font-size: 2em;
-            font-weight: 600;
+        h1.title {
+            font-size: 3rem;
+            color: #ff4d4d;
+            text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
             margin-bottom: 20px;
-            color: #00ffe0;
-            text-shadow: 0 0 8px rgba(0, 255, 224, 0.6);
+            animation: glow 2s infinite alternate;
         }
 
-        .event p {
-            font-size: 1.2em;
-            color: #b0b0b0;
+        section.event {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid #ff4d4d;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 25px #ff4d4d, 0 0 50px #ff4d4d, 0 0 75px #ff4d4d;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.5s forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
-        .event p strong {
-            color: #00ffe0;
-            text-shadow: 0 0 8px rgba(0, 255, 224, 0.6);
+        section.event:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px #ff4d4d, 0 0 70px #ff4d4d, 0 0 100px #ff4d4d;
         }
 
-        /* Footer Glow Line */
-        .container::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, rgba(0, 255, 255, 0.5), rgba(0, 255, 255, 0.1));
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-            animation: moveLine 6s linear infinite;
+        h2 {
+            font-size: 2rem;
+            color: #00ccff;
+            text-shadow: 0 0 10px #00ccff;
+            margin-bottom: 15px;
+            animation: neonGlow 2s infinite alternate;
         }
 
-        @keyframes moveLine {
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+
+        p strong {
+            color: #ff4d4d;
+        }
+
+        /* Neon Line */
+        .neon-divider {
+            width: 80%;
+            height: 2px;
+            background: #00ccff;
+            margin: 30px auto;
+            box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff;
+        }
+
+        /* Keyframe Animations */
+        @keyframes glow {
             0% {
-                left: -100%;
+                text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
             }
             100% {
-                left: 100%;
+                text-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d, 0 0 60px #ff4d4d;
             }
         }
 
-        /* Minimal Hover Animation */
-        .event:hover h2,
-        .event:hover p {
-            color: #00ffe0;
-            text-shadow: 0 0 15px rgba(0, 255, 224, 0.9);
+        @keyframes neonGlow {
+            0% {
+                text-shadow: 0 0 5px #00ccff, 0 0 10px #00ccff;
+            }
+            100% {
+                text-shadow: 0 0 20px #00ccff, 0 0 30px #00ccff;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Image styles */
+        .event img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 1024px) {
+            h1.title {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            section.event {
+                padding: 15px;
+            }
+
+            .neon-divider {
+                width: 85%;
+            }
+
+            .event img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1.title {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            section.event {
+                padding: 10px;
+            }
+
+            .neon-divider {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1.title {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            section.event {
+                padding: 8px;
+            }
+
+            .neon-divider {
+                width: 95%;
+            }
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <h1 class="title">VIRUS 2024 Results</h1>
+        <h1 class="title">VIRUS'24 RESULTS!!!</h1>
 
         <section class="event">
+            <img src="images\FUSION_AI.jpg" alt="Fusion AI Event">
             <h2>Fusion AI - AI Innovation Challenge</h2>
-            <p><strong>Winner:</strong> Alpha Coders</p>
-            <p><strong>Runner-Up:</strong> The Neural Networkers</p>
-            <p><strong>Highlights:</strong> Breakthrough in NLP</p>
+            <p><strong>Winner:</strong> </p>
+            <p><strong>Runner-Up:</strong> </p>
+            <p><strong>Highlights:</strong> </p>
         </section>
+        <div class="neon-divider"></div>
 
         <section class="event">
+            <img src="images\BUILDING_EMPIRES.jpg" alt="Building Empires Event">
             <h2>Building Empires - Entrepreneurial Hackathon</h2>
-            <p><strong>Winner:</strong> Startup Masters</p>
-            <p><strong>Runner-Up:</strong> BizWiz</p>
-            <p><strong>Best Startup Concept:</strong> Greenovation</p>
+            <p><strong>Winner:</strong> </p>
+            <p><strong>Runner-Up:</strong> </p>
+            <p><strong>Best Startup Concept:</strong> </p>
         </section>
+        <div class="neon-divider"></div>
 
         <section class="event">
-            <h2>EduCraft - Minecraft Based Event</h2>
-            <p><strong>Winner:</strong> Block Builders</p>
-            <p><strong>Runner-Up:</strong> The Crafters</p>
-            <p><strong>Minecraft Experts:</strong> Redstone Revolutionaries</p>
+            <img src="images\EDUCRAFT.png" alt="EduCraft Event">
+            <h2>EduCraft - Minecraft</h2>
+            <p><strong>Winner:</strong> Learning Masters</p>
+            <p><strong>Runner-Up:</strong> Code Wizards</p>
+            <p><strong>Best Educational Tool:</strong> </p>
         </section>
+        <div class="neon-divider"></div>
 
         <section class="event">
+            <img src="images\Code-Con.jpg" alt="Code-Con Event">
             <h2>Code-Con - Coding Marathon</h2>
-            <p><strong>Winner:</strong> Bug Bashers</p>
-            <p><strong>Runner-Up:</strong> Syntax Errors</p>
-            <p><strong>Fastest Programmers:</strong> The Debuggers</p>
+            <p><strong>Winner:</strong> </p>
+            <p><strong>Runner-Up:</strong></p>
+            <p><strong>Fastest Programmers</strong> </p>
         </section>
+        <div class="neon-divider"></div>
 
         <section class="event">
-            <h2>Gameatrix - Gaming Battle</h2>
-            <p><strong>Winner:</strong> Victory Royale</p>
-            <p><strong>Runner-Up:</strong> Headshot Kings</p>
-            <p><strong>Best Goal:</strong> The Snipers</p>
+            <img src="images\GAMEATRIX.png" alt="Gameatrix Event">
+            <h2>Gameatrix - FIFA</h2>
+            <p><strong>Winner:</strong></p>
+            <p><strong>Runner-Up:</strong></p>
+            <p><strong>Best Goal:</strong> </p>
         </section>
+        <div class="neon-divider"></div>
 
         <section class="event">
+            <img src="images\ARTBYTE.jpeg" alt="artbyte arena Event">
             <h2>Artbyte Arena - Digital Art Competition</h2>
-            <p><strong>Winner:</strong> Pixel Pros</p>
-            <p><strong>Runner-Up:</strong> Artistic Impressions</p>
-            <p><strong>Best Creative Concept:</strong> ColorWave</p>
+            <p><strong>Winner:</strong> </p>
+            <p><strong>Runner-Up:</strong></p>
+            <p><strong>Best Creative Concept:</strong> </p>
         </section>
+        <div class="neon-divider"></div>
 
         <section class="event">
+            <img src="images\PIXELOMATIC.jpg" alt="Pixelomatic Event">
             <h2>Pixelomatic - Graphic Design Showdown</h2>
-            <p><strong>Winner:</strong> Design Gurus</p>
-            <p><strong>Runner-Up:</strong> Creative Pixels</p>
-            <p><strong>Best Design:</strong> The Visionaries</p>
+            <p><strong>Winner:</strong> </p>
+            <p><strong>Runner-Up:</strong></p>
+            <p><strong>Best Design:</strong> </p>
         </section>
     </div>
 </body>
-
 </html>
+
