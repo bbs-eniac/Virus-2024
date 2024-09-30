@@ -13,29 +13,16 @@
         }
 
         body {
-            background: linear-gradient(45deg, #1b1b1b, #2d2d2d, #1b1b1b);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            color: #f0f0f0;
-            font-family: 'Arial', sans-serif;
+            background: #0e0b16;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             min-height: 100vh;
             overflow-y: auto;
         }
 
-        @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
+        /* Container Styles */
         .container {
             width: 90%;
             max-width: 1200px;
@@ -44,79 +31,118 @@
             margin-bottom: 50px;
         }
 
+        /* Title Styles */
         h1.title {
-            font-size: 3rem;
-            color: #ff4d4d;
-            text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
-            margin-bottom: 20px;
-            animation: glow 2s infinite alternate;
+            font-size: 3.5rem;
+            color: #00eaff;
+            text-shadow: 0 0 10px #00eaff, 0 0 20px #ff6bcb;
+            margin-bottom: 30px;
+            animation: titleGlow 2s infinite alternate ease-in-out;
+            letter-spacing: 2px;
         }
 
+        @keyframes titleGlow {
+            0% {
+                text-shadow: 0 0 10px #00eaff, 0 0 20px #ff6bcb;
+            }
+            100% {
+                text-shadow: 0 0 20px #00eaff, 0 0 40px #ff6bcb;
+            }
+        }
+
+        /* Event Section */
         section.event {
             background-color: rgba(255, 255, 255, 0.1);
-            border: 2px solid #ff4d4d;
-            border-radius: 15px;
+            border: 2px solid #00eaff;
+            border-radius: 20px;
             padding: 20px;
             margin: 20px 0;
-            box-shadow: 0 0 25px #ff4d4d, 0 0 50px #ff4d4d, 0 0 75px #ff4d4d;
+            box-shadow: 0 0 20px #00eaff, 0 0 40px #ff6bcb;
             opacity: 0;
             transform: translateY(50px);
             animation: fadeInUp 1.5s forwards;
+            animation-delay: 0.5s;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
+            cursor: pointer;
         }
 
         section.event:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 40px #ff4d4d, 0 0 70px #ff4d4d, 0 0 100px #ff4d4d;
+            box-shadow: 0 0 60px #00eaff, 0 0 80px #ff6bcb;
+        }
+
+        section.event:active {
+            transform: scale(0.95);
+            transition: transform 0.2s;
+        }
+
+        /* Neon Flicker Animation */
+        section.event::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00eaff, #ff6bcb, #fddb3a);
+            z-index: -1;
+            border-radius: 20px;
+            filter: blur(10px);
+            opacity: 0;
+            animation: flicker 2s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         h2 {
-            font-size: 2rem;
-            color: #00ccff;
-            text-shadow: 0 0 10px #00ccff;
-            margin-bottom: 15px;
-            animation: neonGlow 2s infinite alternate;
+            font-size: 2.5rem;
+            color: #fddb3a;
+            text-shadow: 0 0 10px #fddb3a, 0 0 20px #ff6bcb;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.5s forwards;
+            animation-delay: 0.6s;
         }
 
         p {
             font-size: 1.2rem;
             margin-bottom: 10px;
-            color: #e0e0e0;
+            color: #d1d1d1;
+            animation: fadeInUp 1.5s forwards;
+            animation-delay: 0.7s;
         }
 
         p strong {
-            color: #ff4d4d;
+            color: #fddb3a;
         }
 
-        /* Neon Line */
+        /* Neon Divider */
         .neon-divider {
-            width: 80%;
-            height: 2px;
-            background: #00ccff;
-            margin: 30px auto;
-            box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(90deg, #00eaff, #ff6bcb, #fddb3a);
+            margin: 40px auto;
+            box-shadow: 0 0 10px #00eaff, 0 0 20px #ff6bcb;
+            animation: slideLeftRight 3s infinite alternate ease-in-out;
         }
 
-        /* Keyframe Animations */
-        @keyframes glow {
+        @keyframes slideLeftRight {
             0% {
-                text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d, 0 0 30px #ff4d4d;
+                transform: translateX(0);
             }
             100% {
-                text-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d, 0 0 60px #ff4d4d;
+                transform: translateX(10px);
             }
         }
 
-        @keyframes neonGlow {
-            0% {
-                text-shadow: 0 0 5px #00ccff, 0 0 10px #00ccff;
-            }
-            100% {
-                text-shadow: 0 0 20px #00ccff, 0 0 30px #00ccff;
-            }
-        }
-
+        /* Keyframe for Section Animation */
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
@@ -128,21 +154,53 @@
             }
         }
 
-        /* Image styles */
+        /* Image Styles */
         .event img {
-            width: 100%;
+            width: 60%;
             border-radius: 10px;
             margin-bottom: 15px;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
-        /* Responsive Media Queries */
+        .event img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.3);
+        }
+
+        .event img:active {
+            transform: rotate(15deg);
+            transition: transform 0.2s;
+        }
+
+        /* Ripple Effect on Click */
+        section.event:active::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            animation: ripple 0.6s ease-out;
+        }
+
+        @keyframes ripple {
+            100% {
+                transform: translate(-50%, -50%) scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 1024px) {
             h1.title {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             p {
@@ -154,25 +212,51 @@
             }
 
             .neon-divider {
-                width: 85%;
+                width: 80%;
             }
 
             .event img {
-                width: 100%;
+                width: 70%;
             }
         }
 
         @media (max-width: 768px) {
             h1.title {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
             h2 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             p {
                 font-size: 1rem;
+            }
+
+            section.event {
+                padding: 12px;
+            }
+
+            .neon-divider {
+                width: 85%;
+            }
+
+            .event img {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1.title {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
             }
 
             section.event {
@@ -182,107 +266,60 @@
             .neon-divider {
                 width: 90%;
             }
-        }
 
-        @media (max-width: 480px) {
-            h1.title {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
-
-            p {
-                font-size: 0.9rem;
-            }
-
-            section.event {
-                padding: 8px;
-            }
-
-            .neon-divider {
-                width: 95%;
+            .event img {
+                width: 90%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">VIRUS'24 RESULTS!!!</h1>
+        <h1 class="title">VIRUS'24 RESULTS!</h1>
 
         <section class="event">
-            <img src="images\FUSION_AI.jpg" alt="Fusion AI Event">
+            <img src="images/FUSION_AI.jpg" alt="Fusion AI Event">
             <h2>Fusion AI - AI Innovation Challenge</h2>
-            <p><strong>Winner:</strong> </p>
-            <p><strong>Runner-Up:</strong> </p>
-            <p><strong>Highlights:</strong> </p>
+            <p><strong>Winner:</strong></p>
+            <p><strong>Runner-Up:</strong></p>
+            <p><strong>Highlights:</strong></p>
         </section>
         <div class="neon-divider"></div>
 
         <section class="event">
-            <img src="images\BUILDING_EMPIRES.jpg" alt="Building Empires Event">
+            <img src="images/BUILDING_EMPIRES.jpg" alt="Building Empires Event">
             <h2>Building Empires - Entrepreneurial Hackathon</h2>
-            <p><strong>Winner:</strong> </p>
-            <p><strong>Runner-Up:</strong> </p>
-            <p><strong>Best Startup Concept:</strong> </p>
+            <p><strong>Winner:</strong></p>
+            <p><strong>Runner-Up:</strong></p>
+            <p><strong>Best Startup Concept:</strong></p>
         </section>
         <div class="neon-divider"></div>
 
         <section class="event">
-            <img src="images\EDUCRAFT.png" alt="EduCraft Event">
+            <img src="images/EDUCRAFT.png" alt="EduCraft Event">
             <h2>EduCraft - Minecraft</h2>
-            <p><strong>Winner:</strong> </p>
-            <p><strong>Runner-Up:</strong> </p>
-            <p><strong>Best Educational Tool:</strong> </p>
+            <p><strong>Winner:</strong></p>
+            <p><strong>Runner-Up:</strong></p>
+            <p><strong>Most Creative Build:</strong></p>
         </section>
         <div class="neon-divider"></div>
 
         <section class="event">
-            <img src="images\Code-Con.jpg" alt="Code-Con Event">
-            <h2>Code-Con - Coding Marathon</h2>
-        <section class="event">
-            <h2>Code-Con - Coding Marathon</h2>
-            <h3><strong>Prelim Results</strong> </h3>
-            <h4><strong>Shortlisted Schools</strong> </h4>
-            <p><strong>Amity International School Gurugram</strong> </p>
-            <p><strong>Tagore International School</strong> </p>
-            <p><strong>Army Public School</strong> </p>
-            <p><strong>Vasant Valley School</strong> </p>
-            <p><strong>Father Agnel Public School</strong> </p>
-            <p><strong>Delhi Public School RKP</strong> </p>
-            <p><strong>K.R.Mangalam World School G.K.-2</strong> </p>
-            <p><strong>Amity International School Gurugram</strong> </p>
-
-        </section>
-        <div class="neon-divider"></div>
-
-        <section class="event">
-            <img src="images\GAMEATRIX.png" alt="Gameatrix Event">
+            <img src="images/GAMEATRIX.png" alt="Gameatrix Event">
             <h2>Gameatrix - FIFA</h2>
             <p><strong>Winner:</strong></p>
             <p><strong>Runner-Up:</strong></p>
-            <p><strong>Best Goal:</strong> </p>
+            <p><strong>Best Goal:</strong></p>
         </section>
         <div class="neon-divider"></div>
 
         <section class="event">
-            <img src="images\ARTBYTE.jpeg" alt="artbyte arena Event">
+            <img src="images/ARTBYTE.jpeg" alt="Artbyte Arena Event">
             <h2>Artbyte Arena - Digital Art Competition</h2>
-            <p><strong>Winner:</strong> </p>
+            <p><strong>Winner:</strong></p>
             <p><strong>Runner-Up:</strong></p>
-            <p><strong>Best Creative Concept:</strong> </p>
-        </section>
-        <div class="neon-divider"></div>
-
-        <section class="event">
-            <img src="images\PIXELOMATIC.jpg" alt="Pixelomatic Event">
-            <h2>Pixelomatic - Graphic Design Showdown</h2>
-            <p><strong>Winner:</strong> </p>
-            <p><strong>Runner-Up:</strong></p>
-            <p><strong>Best Design:</strong> </p>
+            <p><strong>Best Creative Concept:</strong></p>
         </section>
     </div>
 </body>
 </html>
-
