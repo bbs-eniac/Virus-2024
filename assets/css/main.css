@@ -309,7 +309,7 @@ html {
 }
 body {
   /* background-color: #2e3141; */
-  background-image: url("https://cdn.discordapp.com/attachments/909763979704930326/1010105337463967824/WhatsApp_Image_2022-08-19_at_2.04.35_PM.jpeg?width=609&height=406") !important;
+  background-image: url("images/bg.jpg") !important;
   /* background-color: black; */
   background-repeat: no-repeat;
   background-size: cover;
@@ -502,7 +502,7 @@ h4 {
   font-size: 0.7em;
 }
 h5 {
-  font-size: 0.7em;
+  font-size: 0.3em;
 }
 h6 {
   font-size: 0.7em;
@@ -3180,7 +3180,7 @@ body.is-preload #banner p {
         rgba(46, 49, 65, 0.8),
         rgba(46, 49, 65, 0.8)
       ),
-      url("../../images/bg.jpg");
+      url("/images/bg.jpg");
     background-size: auto, cover;
     background-position: center, 0% 30%;
     margin-bottom: -6.5em;
@@ -3979,16 +3979,22 @@ i {
   background-image: url(https://cdn.discordapp.com/attachments/909763979704930326/1010176691756347483/florian-olivo-4hbJ-eymZ1o-unsplash.jpg);
 }
 .d_card:nth-child(2):before {
-  background-image: url(https://media.discordapp.net/attachments/763767615042224149/876111827065536542/unknown.png);
+  background-image: url(/images/Arnav_Grover_Pic.jpeg);
 }
 .d_card:nth-child(3):before {
-  background-image: url(https://media.discordapp.net/attachments/763767615042224149/876112458094366730/unknown.png);
+  background-image: url(https://i.imgur.com/kJQAOcc.jpeg);
 }
 .d_card:nth-child(4):before {
   background-image: url(https://cdn.discordapp.com/attachments/909763979704930326/1010163405799309392/413114.jpg);
 }
 .d_card:nth-child(5):before {
   background-image: url(https://media.discordapp.net/attachments/763767615042224149/876111490590048276/unknown.png);
+}
+.d_card:nth-child(6):before {
+  background-image: url(https://media.discordapp.net/attachments/763767615042224149/876111490590048276/unknown.png);
+}
+.d_card:nth-child(7):before {
+  background-image: url(/images/Arnav_Grover_Pic.jpeg);
 }
 
 .content {
