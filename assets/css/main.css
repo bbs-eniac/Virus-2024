@@ -3976,22 +3976,22 @@ i {
     -webkit-transform calc(var(--d) * 2) var(--e);
 }
 .d_card:nth-child(1):before {
-  background-image: url(https://cdn.discordapp.com/attachments/909763979704930326/1010176691756347483/florian-olivo-4hbJ-eymZ1o-unsplash.jpg);
+  background-image: url(../../images/Code-Con_Poster.jpeg);
 }
 .d_card:nth-child(2):before {
-  background-image: url(../images/Arnav_Grover_Pic.jpeg);
+  background-image: url(../../images/Fusion_AI_Poster.jpeg);
 }
 .d_card:nth-child(3):before {
-  background-image: url(https://i.imgur.com/kJQAOcc.jpeg);
+  background-image: url(../../images/Pixelomatic_Poster.jpeg);
 }
 .d_card:nth-child(4):before {
-  background-image: url(/../images/Arnav_Grover_Pic.jpeg);
+  background-image: url(../../images/EduCraft_Poster.jpeg);
 }
 .d_card:nth-child(5):before {
-  background-image: url(https://media.discordapp.net/attachments/763767615042224149/876111490590048276/unknown.png);
+  background-image: url(../../images/Building_Empires_Poster.png);
 }
 .d_card:nth-child(6):before {
-  background-image: url(https://media.discordapp.net/attachments/763767615042224149/876111490590048276/unknown.png);
+  background-image: url(../../images/ArtByte_Poster.jpeg);
 }
 .d_card:nth-child(7):before {
   background-image: url(../../images/Arnav_Grover_Pic.jpeg);
